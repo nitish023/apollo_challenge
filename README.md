@@ -10,8 +10,29 @@ The Vehicle API is a CRUD-style web service that manages a database of vehicles.
 ## Endpoints
 - 'GET /vehicle'
     - Description: Retrieves all vehicle records
-    - Response
+    - Response:
+        - Status Code: 200 OK
+        - Body: JSON array of vehicle records 
 - 'POST /vehicle'
+    - Description: Add a new vehicle record
+    - Request: JSON object of vehicle
+    - Response:
+        - Status Code: 201 Created
+        - Body: JSON object of the new vehicle
 - 'GET /vehicle/<vin>'
+    - Description: Retrieves a specific vehicle by VIN
+    - Response: 
+        - Status Code: 200 OK (if found)
+        - Status Code: 404 Not Found (else)
+        - Body: JSON object of the vehicle
 - 'PUT /vehicle/<vin>'
+    - Description: Update a vehicle record by VIN
+    - Response:
+        - Status Code: 200 OK (if found)
+        - Status Code: 404 Not Found (else)
+        - Body: JSON object of the vehicle
 - 'DELETE /vehicle/<vin>'
+    - Description: Delete a vehicle by VIN
+    - Response:
+        - Status Code: 204 No Content (if successful)
+        - Status Code: 404 Not Found (else)
