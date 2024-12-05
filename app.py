@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from models import db, Vehicle
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Millionaireby25@localhost/apollo'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Qwerty_105@localhost/apollo'
 db.init_app(app)
 
 def validate_vehicle(data):
