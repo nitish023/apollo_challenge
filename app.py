@@ -2,8 +2,11 @@ from flask import Flask, jsonify, request
 from models import db, Vehicle
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Qwerty_105@localhost/apollo'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///vehicle_database.db'
 db.init_app(app)
+
+with app.app_context():
+    db.create_all()
 
 def validate_vehicle(data):
     required_fields = ['vin', 'manufacturer_name', 'horse_power', 'model_name', 'model_year', 'purchase_price', 'fuel_type']
